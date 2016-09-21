@@ -3,7 +3,7 @@
 import UIKit
 import Foundation
 
-
+/////////////////////////////////////////////////
 
 var shoppingList: [String] = ["Bread", "Butter", "Cheese", "Lettuce", "Tomatoes"]
 
@@ -23,7 +23,7 @@ shoppingList.removeAll()
 let noLastElement = shoppingList.popLast()
 
 
-
+////////////////////////////////////////////////
 
 
 var newShoppingList: [String] = ["Bread", "Butter", "Cheese", "Lettuce", "Tomatoes"]
@@ -45,3 +45,23 @@ let element = "Butter"
 if newShoppingList.contains(element) {
     print("already in the shopping list")
 }
+
+////////////////////////////////////////////////
+
+
+func findElem(array:[String], element: String) -> Bool {
+    for elem in array {
+        if elem == element {
+            return true
+        }
+    }
+    return false
+}
+
+
+
+
+
+
+
+
