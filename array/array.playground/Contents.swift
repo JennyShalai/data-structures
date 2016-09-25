@@ -60,10 +60,6 @@ func findElem(array:[String], element: String) -> Bool {
 
 //////////////////////   SORT with MERGE   ///////////////////////
 
-let numbers = [4,6,2,11,7,9,8]
-
-
-
 func mergeArrays(firstArray: [Int], secondArray: [Int]) -> [Int] {
     
     var currentFirstIndex = 0
@@ -99,27 +95,23 @@ func mergeArrays(firstArray: [Int], secondArray: [Int]) -> [Int] {
 }
 
 func sortArray(input:[Int]) -> [Int] {
+    
     var array = input
     let middle = array.count / 2
-    let leftSubArray: [Int] = Array(array[0..<middle])
-    let rightSubArray: [Int] = Array(array[middle...array.count - 1])
-    print(leftSubArray)
-    print(rightSubArray)
+    var leftSubArray: [Int] = Array(array[0..<middle])
+    var rightSubArray: [Int] = Array(array[middle...array.count - 1])
+    
     if leftSubArray.count > 1 {
-        sortArray(input: leftSubArray)
-        //mergeArray()
+        leftSubArray = sortArray(input: leftSubArray)
     }
     if rightSubArray.count > 1 {
-        sortArray(input: rightSubArray)
+        rightSubArray = sortArray(input: rightSubArray)
+        
     }
-    
-    
-    
-    
-    
-    return [0]
+    return mergeArrays(firstArray: leftSubArray, secondArray: rightSubArray)
 }
 
+let numbers = [4,6,2,11,7,9,8]
 let result = sortArray(input: numbers)
 
 
