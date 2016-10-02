@@ -12,9 +12,16 @@ let capitalize = string.capitalized // "Hello"
 string.append("!")  // "Hello!"
 string += "!"       // "Hello!!"
 
+
 let number = string.characters.count    // 7
 
-let array = Array(string.characters)    // ["h", "e", "l", "l", "o", "!", "!"]
+let str = "hi there!"
+let arr1 = str.characters.split(separator: " ").map(String.init) // ["hi", "there!"]
+let arr2 = Array(str.characters)    // ["h", "i", " ", "t", "h", "e", "r", "e", "!"]
+
+let arrayFromString = Array(string.characters)    // ["h", "e", "l", "l", "o", "!", "!"]
+let stringFromArray = String(arrayFromString)     // hello!!
+
 
 //////////////////  LOOPS ///////////////////////////////
 
