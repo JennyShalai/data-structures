@@ -2,7 +2,7 @@
 
 import UIKit
 
-///////////////////////////
+/////////////////   FIND    O(logN)     //////////
 
 func findElemInSortedArray(sortedArray:[Int], element: Int) -> Bool {
     
@@ -14,13 +14,13 @@ func findElemInSortedArray(sortedArray:[Int], element: Int) -> Bool {
     if middle == element {
         return true
     } else if middle > element {
-        return findElemInSortedArray(Array(sortedArray[0..<sortedArray.count/2]), element: element)
+        return findElemInSortedArray(sortedArray: Array(sortedArray[0..<sortedArray.count/2]), element: element)
     } else {
-        return findElemInSortedArray(Array(sortedArray[sortedArray.count/2 + 1..<sortedArray.count]), element: element)
+        return findElemInSortedArray(sortedArray: Array(sortedArray[sortedArray.count/2 + 1..<sortedArray.count]), element: element)
     }
 }
 
-///////////////////////////
+/////////////////   FIND    O(logN)     //////////
 
 func findElemIndex(sortedArray:[Int], element: Int) -> Int {
     
@@ -32,13 +32,13 @@ func findElemIndex(sortedArray:[Int], element: Int) -> Int {
     if middle == element {
         return sortedArray.count / 2
     } else if middle > element {
-        return findElemIndex(Array(sortedArray[0..<sortedArray.count/2]), element: element)
+        return findElemIndex(sortedArray: Array(sortedArray[0..<sortedArray.count/2]), element: element)
     } else {
-        return findElemIndex(Array(sortedArray[sortedArray.count/2 + 1..<sortedArray.count]), element: element)
+        return findElemIndex(sortedArray: Array(sortedArray[sortedArray.count/2 + 1..<sortedArray.count]), element: element)
     }
 }
 
-///////////////////////////
+/////////////////   INSERT    O(logN)     //////////
 
 
 func insertElement(sortedArray:[Int], element: Int) -> [Int] {
@@ -63,25 +63,27 @@ func insertElement(sortedArray:[Int], element: Int) -> [Int] {
         }
         
         if rightIndex - leftIndex == 1 {
-            resultArray.insert(element, atIndex: rightIndex)
+            resultArray.insert(element, at: rightIndex)
             return resultArray
         } else if rightIndex == leftIndex {
             if element > sortedArray[rightIndex] {
-                resultArray.insert(element, atIndex: rightIndex + 1)
+                resultArray.insert(element, at: rightIndex + 1)
                 return resultArray
             } else if element < sortedArray[leftIndex] {
-                resultArray.insert(element, atIndex: rightIndex - 1)
+                resultArray.insert(element, at
+                    : rightIndex - 1)
                 return resultArray
             }
             
         }
         
+        
     }
 }
 
-print(findElemInSortedArray([1], element: 3))
-print(findElemIndex([1], element: 1))
-print(insertElement([4, 5], element: 3))
+print(findElemInSortedArray(sortedArray: [1], element: 3))
+print(findElemIndex(sortedArray: [1], element: 1))
+print(insertElement(sortedArray: [4, 5], element: 3))
 
 
 

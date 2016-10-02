@@ -46,8 +46,7 @@ if newShoppingList.contains(element) {
     print("already in the shopping list")
 }
 
-///////////////////////   is element in array   /////////////////////////
-
+///////////////////////   is element in array   ////////   O(n)   /////////////////
 
 func findElem(array:[String], element: String) -> Bool {
     for elem in array {
@@ -58,7 +57,7 @@ func findElem(array:[String], element: String) -> Bool {
     return false
 }
 
-//////////////////////   SORT with MERGE   ///////////////////////
+//////////////////////   SORT with MERGE   ///////////   O(n*logN)   ////////////
 
 func mergeArrays(firstArray: [Int], secondArray: [Int]) -> [Int] {
     
