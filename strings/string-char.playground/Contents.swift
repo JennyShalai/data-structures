@@ -17,7 +17,9 @@ let number = string.characters.count    // 7
 
 let str = "hi there!"
 let arr1 = str.characters.split(separator: " ").map(String.init) // ["hi", "there!"]
-let arr2 = Array(str.characters)    // ["h", "i", " ", "t", "h", "e", "r", "e", "!"]
+let arr2 = str.components(separatedBy: " ")                      // ["hi", "there!"]
+let arr3 = Array(str.characters)    // ["h", "i", " ", "t", "h", "e", "r", "e", "!"]
+
 
 let arrayFromString = Array(string.characters)    // ["h", "e", "l", "l", "o", "!", "!"]
 let stringFromArray = String(arrayFromString)     // hello!!
