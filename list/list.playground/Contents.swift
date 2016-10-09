@@ -45,7 +45,9 @@ extension IntegerNode {
 // Returns a copy of the original list
 func filterList(head: IntegerNode, m: Int, n: Int) -> IntegerNode? {
     
+    // make a copy of input list
     let head: IntegerNode = head.copy()
+    
     var deleting: Bool = false
     var currentNode: IntegerNode = head
     var counter: Int = 0

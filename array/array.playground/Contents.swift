@@ -33,6 +33,12 @@ for item in newShoppingList {
     print("\(item)")
 }
 
+// intrating with stride
+for index in stride(from: 0, to: newShoppingList.count, by: 2) {
+    print(newShoppingList[index])
+}
+
+// access in index and value
 for (index, item) in newShoppingList.enumerated() {
     print("Index: \(index), item: \(item)")
 }
