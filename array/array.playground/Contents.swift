@@ -8,19 +8,20 @@ import Foundation
 var shoppingList: [String] = ["Bread", "Butter", "Cheese", "Lettuce", "Tomatoes"]
 
 // access element
-let secondItem = shoppingList[1]
+let secondItem = shoppingList[1]    // "Butter"
 
 // add element
-shoppingList.append("Milk")
-shoppingList[2] = "Ham"
-shoppingList.insert("Eggs", at: 4)
+shoppingList.append("Milk")         // ["Bread", "Butter", "Cheese", "Lettuce", "Tomatoes", "Milk"]
+shoppingList[2] = "Ham"             // ["Bread", "Butter", "Ham", "Lettuce", "Tomatoes", "Milk"]
+shoppingList.insert("Eggs", at: 4)  // ["Bread", "Butter", "Ham", "Lettuce", "Eggs", "Tomatoes", "Milk"]
+
 
 // delete element
-shoppingList.remove(at: 1)
-shoppingList.removeLast()
-let lastElement = shoppingList.popLast() // remove last and return it, if no last - return nil
-shoppingList.removeAll()
-let noLastElement = shoppingList.popLast()
+shoppingList.remove(at: 1)               // will remove "Butter"
+shoppingList.removeLast()                // will remove "Milk"
+let lastElement = shoppingList.popLast() // "Tomatoes" // remove last and return it, if no last - return nil
+shoppingList.removeAll()                 // []
+let noLastElement = shoppingList.popLast() // nil
 
 
 //////////////////////   ITERATING   ////////////////////////
@@ -28,23 +29,39 @@ let noLastElement = shoppingList.popLast()
 
 var newShoppingList: [String] = ["Bread", "Butter", "Cheese", "Lettuce", "Tomatoes"]
 
-// iterating
+//// iterating
 for item in newShoppingList {
     print("\(item)")
 }
+// Bread
+// Butter
+// Cheese
+// Lettuce
+// Tomatoes
 
-// intrating with stride
+
+//// intrating with stride
 for index in stride(from: 0, to: newShoppingList.count, by: 2) {
     print(newShoppingList[index])
 }
+// Bread
+// Cheese
+// Tomatoes
 
-// access in index and value
+
+//// access in index and value
 for (index, item) in newShoppingList.enumerated() {
     print("Index: \(index), item: \(item)")
 }
+// Index: 0, item: Bread
+// Index: 1, item: Butter
+// Index: 2, item: Cheese
+// Index: 3, item: Lettuce
+// Index: 4, item: Tomatoes
+
 
 // count elements
-let howMany: Int = newShoppingList.count
+let howMany: Int = newShoppingList.count    // 5
 
 // find element
 let element = "Butter"
@@ -117,7 +134,7 @@ func sortArray(input:[Int]) -> [Int] {
 }
 
 let numbers = [4,6,2,11,7,9,8]
-let result = sortArray(input: numbers)
+let result = sortArray(input: numbers)  // [2, 4, 6, 7, 8, 9, 11]
 
 
 
