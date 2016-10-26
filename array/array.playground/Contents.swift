@@ -108,6 +108,46 @@ print("After sorting: \(bubbleSort(input:array))")  // [1, 2, 2, 5, 8, 45]
 
 
 
+//////////////////////   SORT with SELECTION   ///////////   O(n2)   /////////////////
+
+func selectSort(input: [Int]) -> [Int] {
+    
+    var result: [Int] = input
+    
+    
+    if result.count <= 1 {
+        return result
+    } else {
+        //for each element
+        for i in 0..<result.count {
+            
+            // assume first element is the lowest
+            // remember it's possition
+            var lowestIndex = i
+            
+            // go through all array and check is there any element
+            // lower than first element
+            for j in i+1..<result.count {
+                if result[j] < result[lowestIndex] {
+                    lowestIndex = j
+                }
+            }
+            
+            // if new lowest element was found
+            // swap that lowest with current
+            if i != lowestIndex {
+                swap(&result[i], &result[lowestIndex])
+            }
+        }
+    }
+    return result
+}
+
+var array2:[Int] = [1, 5, 2, 8, 45, 2]               // items to be sorted
+print("Before sorting: \(array)")                   // [1, 5, 2, 8, 45, 2]
+print("After sorting: \(selectSort(input:array))")  // [1, 2, 2, 5, 8, 45]
+
+
 
 //////////////////////   SORT with MERGE   ///////////   O(n*logN)   //////////////
 
