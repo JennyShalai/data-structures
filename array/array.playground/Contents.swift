@@ -80,7 +80,36 @@ func findElem(array:[String], element: String) -> Bool {
     return false
 }
 
-//////////////////////   SORT with MERGE   ///////////   O(n*logN)   ////////////
+//////////////////////   SORT with BUBBLE   ///////////   O(n2)   /////////////////
+
+func bubbleSort(input: [Int]) -> [Int] {
+    
+    var items: [Int] = input
+    var swapped = false
+    
+    repeat {
+        swapped = false
+        for i in 1..<items.count {
+            if items[i-1] > items[i] {
+                let tmp = items[i-1]
+                items [i-1] = items[i]
+                items[i] = tmp
+                swapped = true
+            }
+        }
+    } while swapped
+    
+    return items
+}
+
+var array:[Int] = [1, 5, 2, 8, 45, 2]               // items to be sorted
+print("Before sorting: \(array)")                   // [1, 5, 2, 8, 45, 2]
+print("After sorting: \(bubbleSort(input:array))")  // [1, 2, 2, 5, 8, 45]
+
+
+
+
+//////////////////////   SORT with MERGE   ///////////   O(n*logN)   //////////////
 
 func mergeArrays(firstArray: [Int], secondArray: [Int]) -> [Int] {
     
