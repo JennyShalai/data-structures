@@ -55,6 +55,7 @@ for (index, char) in string.characters.enumerated() {
 
 
 let isThere = string.contains("!!") // true
+let replaced = str.replacingOccurrences(of: "hi", with: "hello") // "hi there!" ->> "hello there!"
 
 let lastCharacter = string.characters.last!         // ! ->> hello!!
 let lastAndDelete = string.characters.popLast()     // ! ->> hello!
